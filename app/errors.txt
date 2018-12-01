@@ -1,0 +1,5 @@
+./files3.rb:11:in `<main>': Принудительно вызываем ошибку (RuntimeError)
+./files3.rb:11:in `<main>': Принудительно вызываем ошибку (RuntimeError)
+./files3.rb:11:in `<main>': Принудительно вызываем ошибку (RuntimeError)
+./files3.rb:19:in `<main>': Принудительно вызываем ошибку (RuntimeError)
+./files3.rb:19:in `<main>': Принудительно вызываем ошибку (RuntimeError)
