@@ -1,60 +1,56 @@
 #!/usr/bin/env ruby
 
-class MegaGreeter
-  attr_accessor :names
+require "./base/mystuff.rb"
 
-  # Create the object
-  def initialize(names = "World")
-    @names = names
+class MyStaff
+
+  def initialize()
+    @tangerine = "And now a thousand years between"
   end
 
-  # Say hi to everybody
-  def say_hi
-    if @names.nil?
-      puts "..."
-    elsif @names.respond_to?("each")
-      # @names is a list of some kind, iterate!
-      @names.each do |name|
-        puts "Hello #{name}!"
-      end
-    else
-      puts "Hello #{@names}!"
-    end
-  end
+  attr_reader :tangerine
 
-  # Say bye to everybody
-  def say_bye
-    if @names.nil?
-      puts "..."
-    elsif @names.respond_to?("join")
-      # Join the list elements with commas
-      puts "Goodbye #{@names.join(", ")}.  Come back soon!"
-    else
-      puts "Goodbye #{@names}.  Come back soon!"
-    end
+  def apple()
+    puts "I AM CLASSY APPLES!"
   end
 
 end
 
 
-if __FILE__ == $0
-  mg = MegaGreeter.new
-  mg.say_hi
-  mg.say_bye
+thing = MyStaff.new()
+thing.apple()
+puts thing.tangerine
 
-  # Change name to be "Zeke"
-  mg.names = "Zeke"
-  mg.say_hi
-  mg.say_bye
+# dict style
+#mystuff['apple']
 
-  # Change the name to an array of names
-  mg.names = ["Albert", "Brenda", "Charles",
-              "Dave", "Engelbert"]
-  mg.say_hi
-  mg.say_bye
+# module style
+MyStuff.apple()
+puts MyStuff::TANGERINE
 
-  # Change to nil
-  mg.names = nil
-  mg.say_hi
-  mg.say_bye
+# class style
+thing = MyStaff.new()
+thing.apple()
+puts thing.tangerine
+
+class Song
+
+  def initialize(lyrics)
+    @lyrics = lyrics
+  end
+
+  def sing_me_a_song()
+    @lyrics.each {|line| puts line }
+  end
 end
+
+happy_bday = Song.new(["Happy birthday to you",
+                       "I don't want to get sued",
+                       "So I'll stop right there"])
+
+bulls_on_parade = Song.new(["They rally around tha family",
+                            "With pockets full of shells"])
+
+happy_bday.sing_me_a_song()
+
+bulls_on_parade.sing_me_a_song()
